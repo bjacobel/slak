@@ -1,0 +1,8 @@
+- TypeScript
+- TSLint and Prettier, to promote good code style
+- Jest, for unit testing
+- TS-Node, for debugging
+- Webpack, to bundle your functions
+- Serverless, to manage deployment and provisioning
+- Node 10 LTS, for the fastest startup and execution possible
+- N|Solid, for profiling in production with minimal overhead

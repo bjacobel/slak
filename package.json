@@ -1,0 +1,10 @@
+{
+  "name": "slak",
+  "description": "Generator for a Serverless application using Typescript on AWS Lambda",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bjacobel/slak.git"
+  },
+  "author": "Brian Jacobel <brian@bjacobel.com>",
+  "license": "MIT"
+}
