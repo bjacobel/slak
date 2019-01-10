@@ -6,5 +6,9 @@
     "url": "git+https://github.com/bjacobel/slak.git"
   },
   "author": "Brian Jacobel <brian@bjacobel.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "hygen": "^2.1.1",
+    "hygen-create": "^0.2.1"
+  }
 }
