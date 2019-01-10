@@ -9,6 +9,9 @@
     "type": "git",
     "url": "git+https://github.com/bjacobel/slak.git"
   },
+  "scripts": {
+    "tpl": "scripts/tpl.js"
+  },
   "author": "Brian Jacobel <brian@bjacobel.com>",
   "license": "MIT",
   "dependencies": {

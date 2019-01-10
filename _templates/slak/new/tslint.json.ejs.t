@@ -3,7 +3,7 @@ to: tslint.json
 ---
 {
   "extends": [
-    "tslint:latest",
+    "tslint:latest"
   ],
   "rulesDirectory": ["tslint-plugin-prettier"],
   "plugins": ["prettier"],
