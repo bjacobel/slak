@@ -1,3 +1,6 @@
+---
+to: .serverless/cloudformation-template-create-stack.json
+---
 {
   "AWSTemplateFormatVersion": "2010-09-09",
   "Description": "The AWS CloudFormation template for this Serverless application",

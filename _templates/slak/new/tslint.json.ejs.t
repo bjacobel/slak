@@ -1,3 +1,6 @@
+---
+to: tslint.json
+---
 {
   "extends": [
     "tslint:latest",

@@ -1,3 +1,6 @@
+---
+to: jest.config.js
+---
 module.exports = {
   collectCoverageFrom: ["src/**/*.ts"],
   coverageDirectory: "<rootDir>/reports/coverage",

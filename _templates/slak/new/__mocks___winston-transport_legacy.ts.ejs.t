@@ -1,3 +1,6 @@
+---
+to: __mocks__/winston-transport/legacy.ts
+---
 import jest from "jest";
 
 const LegacyTransportStream = jest.requireActual("winston-transport/legacy");

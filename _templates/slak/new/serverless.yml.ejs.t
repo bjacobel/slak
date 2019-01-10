@@ -1,4 +1,7 @@
-service: SLAKPROJ
+---
+to: serverless.yml
+---
+service: <%= name %>
 provider:
   name: aws
   stage: ${opt:stage, "dev"}

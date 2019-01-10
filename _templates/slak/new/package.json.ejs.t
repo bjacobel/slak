@@ -1,6 +1,10 @@
+---
+to: package.json
+---
 {
-  "name": "SLAKPROJ",
+  "name": "<%= name %>",
   "version": "1.0.0",
+  "license": "MIT",
   "scripts": {
     "lint": "tslint -t stylish --fix -p .",
     "analyze": "ANALYZE=true sls package",

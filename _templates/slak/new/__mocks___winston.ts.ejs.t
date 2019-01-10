@@ -1,3 +1,6 @@
+---
+to: __mocks__/winston.ts
+---
 import { EventEmitter } from "events";
 import jest from "jest";
 

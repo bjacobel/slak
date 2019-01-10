@@ -1,3 +1,6 @@
+---
+to: src/utils/__tests__/log-test.ts
+---
 import * as winston from "winston";
 
 import log, { debugFormat } from "../log";

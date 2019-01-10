@@ -1,3 +1,6 @@
+---
+to: src/main.ts
+---
 // Import aws-sdk to check that ignoring it from the bundle works.
 // @ts-ignore 6133
 import AWS from "aws-sdk";

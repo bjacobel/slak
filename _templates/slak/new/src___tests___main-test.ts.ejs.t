@@ -1,3 +1,6 @@
+---
+to: src/__tests__/main-test.ts
+---
 import main from "../main";
 import log from "../utils/log";
 

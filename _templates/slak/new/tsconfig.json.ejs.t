@@ -1,3 +1,6 @@
+---
+to: tsconfig.json
+---
 {
   "compilerOptions": {
     "lib": ["es2017"],

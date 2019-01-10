@@ -1,3 +1,6 @@
+---
+to: webpack.config.js
+---
 const path = require("path");
 const webpack = require("webpack");
 const slsw = require("serverless-webpack");

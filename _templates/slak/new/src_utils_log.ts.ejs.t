@@ -1,3 +1,6 @@
+---
+to: src/utils/log.ts
+---
 import { createLogger, transports } from "winston";
 import { format } from "logform";
 
