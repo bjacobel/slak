@@ -2,9 +2,8 @@
 to: __mocks__/winston.ts
 ---
 import { EventEmitter } from "events";
-import jest from "jest";
 
-export const { createLogger } = jest.requireActual("winston");
+export const { createLogger } = require.requireActual("winston");
 
 const Console = jest.fn();
 Console.prototype.__proto__ = EventEmitter.prototype;

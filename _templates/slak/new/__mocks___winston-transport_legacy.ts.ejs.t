@@ -1,9 +1,7 @@
 ---
 to: __mocks__/winston-transport/legacy.ts
 ---
-import jest from "jest";
-
-const LegacyTransportStream = jest.requireActual("winston-transport/legacy");
+const LegacyTransportStream = require.requireActual("winston-transport/legacy");
 
 LegacyTransportStream.prototype._deprecated = jest.fn();
 

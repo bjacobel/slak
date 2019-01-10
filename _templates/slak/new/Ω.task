@@ -1,0 +1,3 @@
+---
+sh: "echo 'Running Yarn on the new project...' && yarn install --frozen-lockfile"
+---
