@@ -5,7 +5,7 @@ provider:
   runtime: nodejs8.10  # Node 10 will actually be used, due to the NSolid layer
   environment:
     LOG_LEVEL: info
-    # NSOLID_LICENSE_KEY: ${env:NSOLID_LICENSE_KEY}
+    NSOLID_LICENSE_KEY: ${env:NSOLID_LICENSE_KEY}
 package:
   individually: true
   include:
@@ -16,9 +16,9 @@ package:
 plugins:
   - serverless-webpack
 functions:
-  SLAKPROJ:
+  main:
     memorySize: 128
-    handler: src/SLAKPROJ.default
+    handler: src/main.default
     layers:
       - ${self:custom.nSolid.layerArn}
 custom:
