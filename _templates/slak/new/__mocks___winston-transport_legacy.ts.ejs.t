@@ -5,4 +5,4 @@ const LegacyTransportStream = require.requireActual("winston-transport/legacy");
 
 LegacyTransportStream.prototype._deprecated = jest.fn();
 
-export default LegacyTransportStream;
+module.exports = LegacyTransportStream;

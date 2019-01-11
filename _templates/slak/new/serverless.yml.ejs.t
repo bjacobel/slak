@@ -1,7 +1,7 @@
 ---
 to: serverless.yml
 ---
-service: <%= name %>
+service: <%= name.toLowerCase() %>
 provider:
   name: aws
   stage: ${opt:stage, "dev"}

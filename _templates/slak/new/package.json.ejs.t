@@ -2,7 +2,7 @@
 to: package.json
 ---
 {
-  "name": "<%= name %>",
+  "name": "<%= name.toLowerCase() %>",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {

@@ -10,7 +10,7 @@ const fatal = (message) => {
   process.exit(1);
 };
 
-const runWrapper = async (location, name, ...args) => {
+const runWrapper = async (location, name) => {
   if (!location) {
     fatal("You must specify an output path for the project");
   }
@@ -21,7 +21,7 @@ const runWrapper = async (location, name, ...args) => {
 
   console.log(`Creating new Slak app "${name}" in ${location} ...`)
 
-  return await runner(["slak", "new", "--name", name, ...args], {
+  return await runner(["slak", "new", "--name", name], {
     templates: path.join(__dirname, '../_templates'),
     cwd: location,
     logger: new Logger(console.log.bind(console)),
@@ -36,7 +36,7 @@ const runWrapper = async (location, name, ...args) => {
 
 
 if (require.main === module) {
-  runWrapper(process.cwd(), process.argv.slice(2));
+  runWrapper(process.cwd(), ...process.argv.slice(2));
 }
 
 module.exports = runWrapper;

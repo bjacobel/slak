@@ -10,14 +10,19 @@ const { run } = require("@dependabot/yarn-lib/lib/cli/commands/run");
 const slak = require("./slak");
 
 const cleanup = async (outputLocation, code) => {
-  console.log("\nCleaning up...\n")
+  console.log("\nCleaning up...\n");
   await fs.remove(outputLocation);
   process.exit(code);
 };
 
 (async () => {
   const args = process.argv.slice(2);
-  const outputLocation = path.join(os.tmpdir(), Math.random().toString(36).substring(2, 15));
+  const outputLocation = path.join(
+    fs.realpathSync(os.tmpdir()),
+    Math.random()
+      .toString(36)
+      .substring(2, 15),
+  );
 
   try {
     // Handle ^Cs gracefully
@@ -40,6 +45,6 @@ const cleanup = async (outputLocation, code) => {
     await cleanup(outputLocation, 0);
   } catch (e) {
     console.error(e);
-    await cleanup(outputLocation, 1)
+    await cleanup(outputLocation, 1);
   }
 })();
