@@ -15,6 +15,10 @@
   "author": "Brian Jacobel <brian@bjacobel.com>",
   "license": "MIT",
   "dependencies": {
+    "fs-extra": "^7.0.0",
     "hygen": "^2.1.1"
+  },
+  "devDependencies": {
+    "@dependabot/yarn-lib": "^1.13.0"
   }
 }

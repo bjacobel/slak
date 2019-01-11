@@ -24,3 +24,10 @@ Slak will template out the files you need for your application and install its d
 
 ## Contribute changes to Slak
 Most of the files in this repository are templates. To make changes to the app that Slak sets up for you initially, the recommended workflow is to run Slak to template those files out into a real app, make the changes and test them, and then convert the built files back into templates using `hygen-create`.
+
+## Executing tasks on the templates
+It's possible to run anything you would normally run as a `yarn run` command on the templates without creating a new project first using the `yarn tpl` command. `tpl` sets up a new project in a `/tmp` directory, then invokes `yarn run` there. For example, to run the `package.json`-defined `test` script on the current state of the templates:
+
+    yarn tpl test
+
+This command will even clean up the `/tmp` folder after.

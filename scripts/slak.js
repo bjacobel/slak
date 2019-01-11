@@ -5,14 +5,25 @@ const path = require('path');
 const { runner } = require('hygen');
 const Logger = require('hygen/lib/logger');
 
-const runWrapper = (name, ...args) => {
-  if (!name) {
-    throw new Error("You must at least specify a name for the project, e.g.\n\n\tnpx slak my-new-lambda\n")
+const fatal = (message) => {
+  console.error(message + "\n");
+  process.exit(1);
+};
+
+const runWrapper = async (location, name, ...args) => {
+  if (!location) {
+    fatal("You must specify an output path for the project");
   }
 
-  return runner(["slak", "new", "--name", name, ...args], {
+  if (!name) {
+    fatal("You must specify a name for the project, e.g.\n\n\tnpx slak my-new-lambda")
+  }
+
+  console.log(`Creating new Slak app "${name}" in ${location} ...`)
+
+  return await runner(["slak", "new", "--name", name, ...args], {
     templates: path.join(__dirname, '../_templates'),
-    cwd: process.cwd(),
+    cwd: location,
     logger: new Logger(console.log.bind(console)),
     createPrompter: () => require('enquirer'),
     exec: (action, body) => {
@@ -25,7 +36,7 @@ const runWrapper = (name, ...args) => {
 
 
 if (require.main === module) {
-  runWrapper(process.argv.slice(2));
+  runWrapper(process.cwd(), process.argv.slice(2));
 }
 
 module.exports = runWrapper;
