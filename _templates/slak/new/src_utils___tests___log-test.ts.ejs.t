@@ -19,6 +19,7 @@ describe("log util", () => {
   describe("in dev mode", () => {
     it("formats errors like I want", () => {
       const info = debugFormat.transform({
+        [Symbol.for("level")]: "error",
         level: "error",
         message: (new Error("format the error please") as unknown) as string,
       }) as TransformableInfo;
@@ -27,6 +28,7 @@ describe("log util", () => {
 
     it("formats javascript objects like I want", () => {
       const info = debugFormat.transform({
+        [Symbol.for("level")]: "info",
         level: "info",
         message: JSON.stringify({ foo: { bar: [1, 2, 3] } }, null, 2),
       }) as TransformableInfo;

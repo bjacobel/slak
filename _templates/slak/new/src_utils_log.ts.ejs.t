@@ -3,11 +3,12 @@ to: src/utils/log.ts
 ---
 import { format } from "logform";
 import { createLogger, transports } from "winston";
+import { npm } from "winston/lib/winston/config";
 
 const defaultFormat = [format.errors({ stack: true })];
 
 export const debugFormat = format.combine(
-  // format.colorize(),
+  format.colorize(),
   ...defaultFormat,
   format.printf((info) => {
     if (info.stack) {
