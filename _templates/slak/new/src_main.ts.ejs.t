@@ -11,8 +11,8 @@ export default async (event: any) => {
   try {
     return Promise.resolve(event.source.service);
   } catch (e) {
-    log.info(event);
+    log.info(JSON.stringify(event, null, 2));
     log.error(e);
     return Promise.reject(e);
   }
-}
+};

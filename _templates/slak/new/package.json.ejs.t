@@ -15,11 +15,13 @@ to: package.json
   "dependencies": {
     "aws-sdk": "^2.384.0",
     "logform": "^2.1.0",
+    "triple-beam": "^1.2.0",
     "winston": "^3.1.0"
   },
   "devDependencies": {
     "@types/jest": "^23.3.12",
     "@types/node": "~10.12",
+    "@types/triple-beam": "^1.3.0",
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "prettier": "^1.15.3",

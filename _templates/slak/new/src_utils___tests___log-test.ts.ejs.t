@@ -1,6 +1,8 @@
 ---
 to: src/utils/__tests__/log-test.ts
 ---
+import { TransformableInfo } from "logform";
+import { MESSAGE } from "triple-beam";
 import * as winston from "winston";
 
 import log, { debugFormat } from "../log";
@@ -16,17 +18,19 @@ describe("log util", () => {
 
   describe("in dev mode", () => {
     it("formats errors like I want", () => {
-      expect(debugFormat.transform({
+      const info = debugFormat.transform({
         level: "error",
-        message: new Error("format the error please") as unknown as string,
-      })).toMatchSnapshot();
+        message: (new Error("format the error please") as unknown) as string,
+      }) as TransformableInfo;
+      expect(info[MESSAGE].split(__dirname)[0]).toMatchSnapshot();
     });
 
     it("formats javascript objects like I want", () => {
-      expect(debugFormat.transform({
+      const info = debugFormat.transform({
         level: "info",
-        message: { foo: { bar: [1, 2, 3] } } as unknown as string,
-      })).toMatchSnapshot();
+        message: JSON.stringify({ foo: { bar: [1, 2, 3] } }, null, 2),
+      }) as TransformableInfo;
+      expect(info[MESSAGE]).toMatchSnapshot();
     });
   });
 });
