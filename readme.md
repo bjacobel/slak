@@ -1,4 +1,4 @@
-# Slak
+## Slak
 _the **S**erver**l**ess **A**pp **K**it_
 
 ---
@@ -14,6 +14,7 @@ Features include:
 - Serverless, to manage deployment and provisioning
 - Node 10 LTS, for the fastest startup and execution possible
 - N|Solid, for profiling in production with minimal overhead
+- Builtin logging utils and project structure for getting moving fast
 
 ## Start a Slak project
 It's easiest to use Slak with `npx` - that way, you won't need to install any dependencies to get started. In an empty folder, run:
@@ -23,7 +24,25 @@ It's easiest to use Slak with `npx` - that way, you won't need to install any de
 Slak will template out the files you need for your application and install its dependencies.
 
 ## Contribute changes to Slak
-Most of the files in this repository are templates. To make changes to the app that Slak sets up for you initially, the recommended workflow is to run Slak to template those files out into a real app, make the changes and test them, and then convert the built files back into templates using `hygen-create`.
+Most of the files in this repository are templates. To make changes to the app that Slak sets up for you initially, the recommended workflow is to run Slak to template those files out into a real app, make the changes and test them, and then convert the built files back into templates using [`hygen-create`](http://www.hygen.io/create). The basic workflow looks like:
+
+1. Template out a new Slak app
+
+    npx slak my-new-lambda
+
+2. Make some changes in the templated app, e.g., adding a new util file
+
+    echo "module.exports = {};" > src/utils/newUtil.ts"
+
+3. Make `hygen-create` aware of the new file
+
+    npx hygen-create add src/utils/newUtil.ts
+
+4. Generate the templates again, merging them with the existing ones
+
+    npx hygen-create g
+
+This works because Slak adds a `hygen-create.json` to the templated app, marking it as a hygen-create project in-session. Don't delete this file.
 
 ## Executing tasks on the templates
 It's possible to run anything you would normally run as a `yarn run` command on the templates without creating a new project first using the `yarn tpl` command. `tpl` sets up a new project in a `/tmp` directory, then invokes `yarn run` there. For example, to run the `package.json`-defined `test` script on the current state of the templates:
