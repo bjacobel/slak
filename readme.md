@@ -1,7 +1,6 @@
-## Slak
-_the **S**erver**l**ess **A**pp **K**it_
+# Slak
 
----
+_the **S**erver**l**ess **A**pp **K**it_
 
 Cousin of [Rak](https://github.com/bjacobel/rak), Slak bootstraps a Serverless project for building Lambda functions with Typescript in a joyous environment.
 
@@ -28,21 +27,21 @@ Most of the files in this repository are templates. To make changes to the app t
 
 1. Template out a new Slak app
 
-    npx slak my-new-lambda
+        npx slak my-new-lambda
 
 2. Make some changes in the templated app, e.g., adding a new util file
 
-    echo "module.exports = {};" > src/utils/newUtil.ts"
+        echo "module.exports = {};" > src/utils/newUtil.ts
 
 3. Make `hygen-create` aware of the new file
 
-    npx hygen-create add src/utils/newUtil.ts
+        npx hygen-create add src/utils/newUtil.ts
 
 4. Generate the templates again, merging them with the existing ones
 
-    mkdir /tmp/_templates
-    HYGEN_CREATE_TMPLS=/tmp/_templates npx hygen-create g
-    rsync -auP --remove-source-files /tmp/_templates/ ~/code/slak/_templates
+        mkdir /tmp/_templates
+        HYGEN_CREATE_TMPLS=/tmp/_templates npx hygen-create g
+        rsync -auP --remove-source-files /tmp/_templates/ ~/code/slak/_templates
 
 This works because Slak adds a `hygen-create.json` to the templated app, marking it as a hygen-create project in-session. Don't delete this file.
 
