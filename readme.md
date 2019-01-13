@@ -1,4 +1,4 @@
-<img src="https://raw.githubusercontent.com/bjacobel/slak/master/logo.svg" alt="Slak" width="200px">
+<img src="https://raw.githubusercontent.com/bjacobel/slak/master/assets/logo.svg" alt="Slak" width="200px">
 
 _the **S**erver**l**ess **A**pp **K**it_
 
