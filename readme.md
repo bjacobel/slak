@@ -1,4 +1,4 @@
-# Slak
+<img src="https://raw.githubusercontent.com/bjacobel/slak/master/logo.svg" alt="Slak" width="200px">
 
 _the **S**erver**l**ess **A**pp **K**it_
 
@@ -37,11 +37,9 @@ Most of the files in this repository are templates. To make changes to the app t
 
         npx hygen-create add src/utils/newUtil.ts
 
-4. Generate the templates again, merging them with the existing ones
+4. Generate the templates again, merging them with the existing ones at the location you specify
 
-        mkdir /tmp/_templates
-        HYGEN_CREATE_TMPLS=/tmp/_templates npx hygen-create g
-        rsync -auP --remove-source-files /tmp/_templates/ ~/code/slak/_templates
+        yarn upstream ~/code/slak/_templates
 
 This works because Slak adds a `hygen-create.json` to the templated app, marking it as a hygen-create project in-session. Don't delete this file.
 

@@ -10,7 +10,8 @@ to: package.json
     "analyze": "ANALYZE=true sls package",
     "deploy": "sls deploy",
     "test": "jest",
-    "sls": "sls"
+    "sls": "sls",
+    "upstream": "mkdir -p /tmp/_templates && HYGEN_CREATE_TMPLS=/tmp/_templates npx hygen-create g && rsync -auP --remove-source-files -f"+ */" -f"- *" /tmp/_templates/"
   },
   "dependencies": {
     "aws-sdk": "^2.384.0",
