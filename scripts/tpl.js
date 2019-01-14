@@ -3,9 +3,7 @@
 const fs = require("fs-extra");
 const os = require("os");
 const path = require("path");
-const Config = require("@dependabot/yarn-lib/lib/config").default;
-const { ConsoleReporter } = require("@dependabot/yarn-lib/lib/reporters");
-const { run } = require("@dependabot/yarn-lib/lib/cli/commands/run");
+const { spawn } = require('child_process');
 
 const slak = require("./slak");
 
@@ -32,15 +30,20 @@ const cleanup = async (outputLocation, code) => {
 
     await slak(outputLocation, "fake-templated-app");
 
-    // Set up the Yarn CLI to run in-band
-    // Yes, this is insane! Yes, I know!
-    const reporter = new ConsoleReporter({
-      isSilent: false,
-    });
-    const config = new Config(reporter);
-    await config.init({ cwd: outputLocation });
+    console.log(await new Promise((resolve, reject) => {
+      const cmd = spawn("yarn", args, {
+        cwd: outputLocation,
+        stdio: "inherit"
+      });
 
-    await run(config, reporter, {}, args);
+      cmd.on('close', (code) => {
+        if (code) {
+          reject(`exited with code ${code}`);
+        } else {
+          resolve(`Command \`${args.join(" ")}\` finished successfully.`);
+        }
+      });
+    }));
 
     await cleanup(outputLocation, 0);
   } catch (e) {

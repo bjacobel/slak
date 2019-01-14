@@ -3,7 +3,6 @@ to: src/utils/log.ts
 ---
 import { format } from "logform";
 import { createLogger, transports } from "winston";
-import { npm } from "winston/lib/winston/config";
 
 const defaultFormat = [format.errors({ stack: true })];
 
