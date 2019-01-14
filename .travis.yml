@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "10"
+jobs:
+  include:
+    - stage: test-local
+      script: yarn tpl test
+      script: yarn tpl lint
+      script: yarn tpl sls package
+    - stage: test-deploy
+      script: skip
+stages:
+  - test-local
+  - test-deploy
