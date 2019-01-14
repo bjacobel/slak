@@ -5,10 +5,15 @@ jobs:
   include:
     - stage: test-local
       script: yarn tpl test
+    - stage: test-local
       script: yarn tpl lint
+    - stage: test-local
       script: yarn tpl sls package
     - stage: test-deploy
       script: skip
 stages:
   - test-local
   - test-deploy
+notifications:
+  email: false
+  slack: bjacobel:xasDl3nTxo2feJGba70E43oR
