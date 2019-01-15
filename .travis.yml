@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "10"
+jobs:
+  include:
+    - stage: test
+      script: yarn tpl test
+    - script: yarn tpl lint
+    - script: yarn tpl sls package
+stages:
+  - test
+notifications:
+  email: false
+  slack: bjacobel:xasDl3nTxo2feJGba70E43oR

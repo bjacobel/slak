@@ -5,6 +5,10 @@ import main from "../main";
 import log from "../utils/log";
 
 jest.mock("../utils/log");
+jest.mock("../constants", () => ({
+  ...jest.requireActual("../constants"),
+  IS_PROD: false,
+}));
 
 describe("main function handler", () => {
   describe("happy path of boilerplate", () => {
@@ -15,7 +19,7 @@ describe("main function handler", () => {
   describe("error handling", () => {
     it("logs the event with INFO level", () => {
       return main("nope").catch(() =>
-        expect(log.info).toHaveBeenCalledWith("nope")
+        expect(log.info).toHaveBeenCalledWith("\"nope\"")
       );
     });
 

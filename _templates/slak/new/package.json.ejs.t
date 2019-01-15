@@ -11,7 +11,7 @@ to: package.json
     "deploy": "sls deploy",
     "test": "jest",
     "sls": "sls",
-    "upstream": "mkdir -p /tmp/_templates && HYGEN_CREATE_TMPLS=/tmp/_templates npx hygen-create g && rsync -auP --remove-source-files -f"+ */" -f"- *" /tmp/_templates/"
+    "upstream": "mkdir -p /tmp/_templates && HYGEN_CREATE_TMPLS=/tmp/_templates npx hygen-create g && rsync -auP --remove-source-files -f'+ */' -f'- *' /tmp/_templates/"
   },
   "dependencies": {
     "aws-sdk": "^2.384.0",
