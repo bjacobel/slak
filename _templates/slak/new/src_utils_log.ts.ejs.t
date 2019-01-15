@@ -4,6 +4,8 @@ to: src/utils/log.ts
 import { format } from "logform";
 import { createLogger, transports } from "winston";
 
+import { IS_PROD } from "../constants";
+
 const defaultFormat = [format.errors({ stack: true })];
 
 export const debugFormat = format.combine(
@@ -26,8 +28,7 @@ export const cloudwatchFormat = format.combine(
 
 export default createLogger({
   level: "info",
-  format:
-    process.env.NODE_ENV === "production" ? cloudwatchFormat : debugFormat,
+  format: IS_PROD ? cloudwatchFormat : debugFormat,
   transports: [
     new transports.Console({
       level: process.env.LOG_LEVEL,
