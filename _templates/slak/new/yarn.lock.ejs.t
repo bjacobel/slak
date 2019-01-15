@@ -530,7 +530,7 @@ atob@^2.1.1:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-aws-sdk@^2.373.0, aws-sdk@^2.384.0:
+aws-sdk@^2.373.0:
   version "2.384.0"
   resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.384.0.tgz#c8fdce7c72f068f6d8b198b53cf33b6f35f3e811"
   integrity sha512-E+pIOWFNhQH7GCkOl5GU+Vl42MlaKtAq0Yenaa2fRGult9097u7TnUx45V1pNKMCN9RnEFWQy3ZH1TEPEYJ0fw==
@@ -543,6 +543,21 @@ aws-sdk@^2.373.0, aws-sdk@^2.384.0:
     sax "1.2.1"
     url "0.10.3"
     uuid "3.1.0"
+    xml2js "0.4.19"
+
+aws-sdk@^2.384.0:
+  version "2.388.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.388.0.tgz#de3f8f5576ccaa3477fe66529bdd1546250e8325"
+  integrity sha512-2yycFVn90H61R3vbE+4Yqn8AEOS88oOE1wUsm6aUhsk+i/Y707a85C166gKuE3+if4y8IS5qqQJiX+HUtF0KNw==
+  dependencies:
+    buffer "4.9.1"
+    events "1.1.1"
+    ieee754 "1.1.8"
+    jmespath "0.15.0"
+    querystring "0.2.0"
+    sax "1.2.1"
+    url "0.10.3"
+    uuid "3.3.2"
     xml2js "0.4.19"
 
 aws-sign2@~0.7.0:
@@ -5681,10 +5696,10 @@ serverless-webpack@^5.2.0:
     semver "^5.5.0"
     ts-node "^3.2.0"
 
-serverless@^1.35.1:
-  version "1.35.1"
-  resolved "https://registry.yarnpkg.com/serverless/-/serverless-1.35.1.tgz#636ef3a13f40d9ff2341784b57f9478cd23ea9e6"
-  integrity sha512-dywZe5ky45VfvWoZyYrrxOi39HaC2rMjz6rYNGAg1SH5WbzKOHe3O5Wrnc/gteQiA7OViTJlcchiQwtk8x6gdA==
+serverless@^1.36.1:
+  version "1.36.1"
+  resolved "https://registry.yarnpkg.com/serverless/-/serverless-1.36.1.tgz#908c2c414586231bdd061bf74d30196c1f08851e"
+  integrity sha512-C+1WUi+UP6z77IE9K5JksIJQ0Kbc4QdAwwlKXRdzqQKm0DAHtz3/aWv6/wprmaYX+hH6qXFMbabkDNm52leQ8A==
   dependencies:
     "@serverless/platform-sdk" "^0.3.0"
     archiver "^1.1.0"
@@ -6460,10 +6475,10 @@ tslint-plugin-prettier@^2.0.1:
     lines-and-columns "^1.1.6"
     tslib "^1.7.1"
 
-tslint@^5.12.0:
-  version "5.12.0"
-  resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.12.0.tgz#47f2dba291ed3d580752d109866fb640768fca36"
-  integrity sha512-CKEcH1MHUBhoV43SA/Jmy1l24HJJgI0eyLbBNSRyFlsQvb9v6Zdq+Nz2vEOH00nC5SUx4SneJ59PZUS/ARcokQ==
+tslint@^5.12.1:
+  version "5.12.1"
+  resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.12.1.tgz#8cec9d454cf8a1de9b0a26d7bdbad6de362e52c1"
+  integrity sha512-sfodBHOucFg6egff8d1BvuofoOQ/nOeYNfbp7LDlKBcLNrL3lmS5zoiDGyOMdT7YsEXAwWpTdAHwOGOc8eRZAw==
   dependencies:
     babel-code-frame "^6.22.0"
     builtin-modules "^1.1.1"
@@ -6717,15 +6732,15 @@ uuid@3.1.0:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.1.0.tgz#3dd3d3e790abc24d7b0d3a034ffababe28ebbc04"
   integrity sha512-DIWtzUkw04M4k3bf1IcpS2tngXEL26YUD2M0tMDUpnUrz2hgzUBlD55a4FjdLGPvfHxS6uluGWvaVEqgBcVa+g==
 
+uuid@3.3.2, uuid@^3.3.2:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
+  integrity sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA==
+
 uuid@^2.0.2:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
   integrity sha1-Z+LoY3lyFVMN/zGOW/nc6/1Hsho=
-
-uuid@^3.3.2:
-  version "3.3.2"
-  resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
-  integrity sha512-yXJmeNaw3DnnKAOKJE51sL/ZaYfWJRl1pK9dr19YFCu0ObS231AB1/LbqTKRAQ5kw8A90rA6fr4riOUpTZvQZA==
 
 v8-compile-cache@^2.0.2:
   version "2.0.2"
@@ -6854,10 +6869,10 @@ webpack-sources@^1.1.0, webpack-sources@^1.3.0:
     source-list-map "^2.0.0"
     source-map "~0.6.1"
 
-webpack@^4.28.1:
-  version "4.28.1"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.28.1.tgz#d0e2856e75d1224b170bf16c30b6ca9b75f0d958"
-  integrity sha512-qAS7BFyS5iuOZzGJxyDXmEI289h7tVNtJ5XMxf6Tz55J2riOyH42uaEsWF0F32TRaI+54SmI6qRgHM3GzsZ+sQ==
+webpack@^4.28.4:
+  version "4.28.4"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-4.28.4.tgz#1ddae6c89887d7efb752adf0c3cd32b9b07eacd0"
+  integrity sha512-NxjD61WsK/a3JIdwWjtIpimmvE6UrRi3yG54/74Hk9rwNj5FPkA4DJCf1z4ByDWLkvZhTZE+P3C/eh6UD5lDcw==
   dependencies:
     "@webassemblyjs/ast" "1.7.11"
     "@webassemblyjs/helper-module-context" "1.7.11"
