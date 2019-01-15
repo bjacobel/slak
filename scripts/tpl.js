@@ -14,7 +14,10 @@ const cleanup = async (outputLocation, code) => {
 };
 
 (async () => {
-  const args = process.argv.slice(2);
+  let args = process.argv.slice(2);
+  const upstream = args.includes("--upstream");
+  if (upstream) args = args.filter(x => x !== "--upstream");
+
   const outputLocation = path.join(
     fs.realpathSync(os.tmpdir()),
     Math.random()
@@ -44,6 +47,23 @@ const cleanup = async (outputLocation, code) => {
         }
       });
     }));
+
+    if (upstream) {
+      console.log(await new Promise((resolve, reject) => {
+        const cmd = spawn("yarn", ["upstream", path.join(__dirname, "../_templates")], {
+          cwd: outputLocation,
+          stdio: "inherit"
+        });
+
+        cmd.on('close', (code) => {
+          if (code) {
+            reject(`upstreaming exited with code ${code}`);
+          } else {
+            resolve(`Synced changes from command to upstream.`);
+          }
+        });
+      }));
+    }
 
     await cleanup(outputLocation, 0);
   } catch (e) {

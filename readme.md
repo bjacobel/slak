@@ -49,3 +49,10 @@ It's possible to run anything you would normally run as a `yarn run` command on 
     yarn tpl test
 
 This command will even clean up the `/tmp` folder after.
+
+## Making changes _and_ executing tasks
+Combining the two above processes is easy, if you want to run a command on the files that the template would produce and then save file changes effected by that command back to the templates. Simply pass the `--upstream` argument to `yarn tpl`, e.g.:
+
+    yarn tpl upgrade-interactive --latest --upstream
+
+After selecting packages to upgrade, this command would update the _template_ versions of package.json and yarn.lock.

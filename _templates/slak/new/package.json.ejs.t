@@ -11,7 +11,7 @@ to: package.json
     "deploy": "sls deploy",
     "test": "jest",
     "sls": "sls",
-    "upstream": "mkdir -p /tmp/_templates && HYGEN_CREATE_TMPLS=/tmp/_templates npx hygen-create g && rsync -auP --remove-source-files -f'+ */' -f'- *' /tmp/_templates/"
+    "upstream": "rm -rf /tmp/_templates && mkdir /tmp/_templates && HYGEN_CREATE_TMPLS=/tmp/_templates npx hygen-create g && rsync -auP --remove-source-files /tmp/_templates/"
   },
   "dependencies": {
     "aws-sdk": "^2.384.0",
@@ -26,16 +26,16 @@ to: package.json
     "jest": "^23.6.0",
     "jest-cli": "^23.6.0",
     "prettier": "^1.15.3",
-    "serverless": "^1.35.1",
+    "serverless": "^1.36.1",
     "serverless-webpack": "^5.2.0",
     "ts-jest": "^23.10.5",
     "ts-loader": "^5.3.3",
     "ts-node": "^7.0.1",
-    "tslint": "^5.12.0",
+    "tslint": "^5.12.1",
     "tslint-config-prettier": "^1.17.0",
     "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.2.2",
-    "webpack": "^4.28.1",
+    "webpack": "^4.28.4",
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.2.1"
   },
