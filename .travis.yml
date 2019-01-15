@@ -3,17 +3,12 @@ node_js:
   - "10"
 jobs:
   include:
-    - stage: test-local
+    - stage: test
       script: yarn tpl test
-    - stage: test-local
-      script: yarn tpl lint
-    - stage: test-local
-      script: yarn tpl sls package
-    - stage: test-deploy
-      script: skip
+    - script: yarn tpl lint
+    - script: yarn tpl sls package
 stages:
-  - test-local
-  - test-deploy
+  - test
 notifications:
   email: false
   slack: bjacobel:xasDl3nTxo2feJGba70E43oR
