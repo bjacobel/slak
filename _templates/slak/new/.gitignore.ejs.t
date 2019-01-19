@@ -5,3 +5,4 @@ dist
 reports
 .webpack
 .serverless/*.zip
+.env
