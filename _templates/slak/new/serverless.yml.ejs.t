@@ -17,6 +17,7 @@ package:
     - node_modules/aws-sdk/**  # The Lambda execution environment provides the aws-sdk builtin, so exclude it from packaging.
 plugins:
   - serverless-webpack
+  - serverless-dotenv-plugin
 functions:
   main:
     memorySize: 128
