@@ -5,7 +5,7 @@ service: <%= name.toLowerCase() %>
 provider:
   name: aws
   stage: ${opt:stage, "dev"}
-  runtime: nodejs8.10  # Node 10 will actually be used, due to the NSolid layer
+  runtime: provided
   environment:
     LOG_LEVEL: info
     NSOLID_LICENSE_KEY: ${env:NSOLID_LICENSE_KEY}
