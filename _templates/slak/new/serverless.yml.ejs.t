@@ -8,7 +8,6 @@ provider:
   runtime: provided
   environment:
     LOG_LEVEL: info
-    NSOLID_LICENSE_KEY: ${env:NSOLID_LICENSE_KEY}
 package:
   individually: true
   include:
