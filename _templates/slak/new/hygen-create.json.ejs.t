@@ -19,7 +19,6 @@ to: hygen-create.json
     ".vscode/settings.json": true,
     ".vscode/launch.json": true,
     ".serverless/cloudformation-template-create-stack.json": true,
-    "node_modules/.yarn-integrity": true,
     "__mocks__/winston.ts": true,
     "__mocks__/winston-transport/legacy.ts": true,
     "src/main.ts": true,
