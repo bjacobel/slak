@@ -19,18 +19,18 @@ describe("main function handler", () => {
   describe("error handling", () => {
     it("logs the event with INFO level", () => {
       return main("nope").catch(() =>
-        expect(log.info).toHaveBeenCalledWith("\"nope\"")
+        expect(log.info).toHaveBeenCalledWith('"nope"'),
       );
     });
 
     it("logs the error with ERROR level", async () => {
       return main("nope").catch(() =>
-        expect(log.error).toHaveBeenCalledWith(expect.any(TypeError))
+        expect(log.error).toHaveBeenCalledWith(expect.any(TypeError)),
       );
     });
 
     it("returns a promise rejection", () => {
-      return main("nope").catch(err => expect(err).toBeInstanceOf(TypeError));
+      return main("nope").catch((err) => expect(err).toBeInstanceOf(TypeError));
     });
-  })
+  });
 });

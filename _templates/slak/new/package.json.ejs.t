@@ -6,7 +6,7 @@ to: package.json
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "lint": "tslint -t stylish --fix -p .",
+    "lint": "tslint -t stylish -p .",
     "analyze": "ANALYZE=true sls package",
     "deploy": "sls deploy",
     "test": "jest",
