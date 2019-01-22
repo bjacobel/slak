@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-const path = require('path');
+const path = require("path");
+const fs = require("fs-extra");
 
 const { runner } = require('hygen');
 const Logger = require('hygen/lib/logger');
@@ -36,7 +37,17 @@ const runWrapper = async (location, name) => {
 
 
 if (require.main === module) {
-  runWrapper(process.cwd(), ...process.argv.slice(2));
+  const args = process.argv.slice(2);
+  const flags = args;
+  let destination = process.cwd();
+
+  try {
+    if (fs.accessSync(path.resolve(flags[0])) === undefined) {
+      destination = flags.shift();
+    }
+  } catch (e) {}
+
+  runWrapper(destination, ...flags);
 }
 
 module.exports = runWrapper;
