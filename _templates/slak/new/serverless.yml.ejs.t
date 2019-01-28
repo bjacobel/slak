@@ -5,7 +5,7 @@ service: <%= name.toLowerCase() %>
 provider:
   name: aws
   stage: ${opt:stage, "dev"}
-  runtime: provided
+  runtime: nsolid
   environment:
     LOG_LEVEL: info
 package:
@@ -18,6 +18,7 @@ package:
 plugins:
   - serverless-webpack
   - serverless-dotenv-plugin
+  - serverless-nsolid-plugin
 functions:
   main:
     memorySize: 128
