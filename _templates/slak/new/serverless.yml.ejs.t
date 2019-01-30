@@ -23,13 +23,7 @@ functions:
   main:
     memorySize: 128
     handler: src/main.default
-    layers:
-      - ${self:custom.nSolid.layerArn}
 custom:
-  nSolid:
-    accountId: 800406105498
-    layerVersion: 6
-    layerArn: arn:aws:lambda:${self:provider.region}:${self:custom.nSolid.accountId}:layer:nsolid-node-10:${self:custom.nSolid.layerVersion}
   webpack:
     packager: "yarn"
     includeModules:
