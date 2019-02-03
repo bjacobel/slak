@@ -5759,10 +5759,10 @@ serverless-dotenv-plugin@^2.0.1:
     dotenv "^4.0.0"
     dotenv-expand "^4.0.1"
 
-serverless-nsolid-plugin@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/serverless-nsolid-plugin/-/serverless-nsolid-plugin-1.0.2.tgz#d06fe73054cf88bcaee78cbb152d879f0b58f8ec"
-  integrity sha512-4/nhkwvX7mZ0FsWMPQmqDShCnb+A9bHG2Q2iKLzYKDKgq1/wgSQBVZBei+rSMjsdKeklL3pWRX5rWwKARGZP2A==
+serverless-nsolid-plugin@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/serverless-nsolid-plugin/-/serverless-nsolid-plugin-1.0.4.tgz#8164b43df33aa6a776f954cd4e6f913ab55aaf0b"
+  integrity sha512-j2an96GQmThzJlOKxY7G7+LmRLx20GN+3tKk9O298hggildGWAVP4ghCHKSvGVCgJlotHYS7JgDP1vUEYzpqbQ==
   dependencies:
     aws-sdk "^2.392.0"
     dotenv "^6.2.0"
@@ -5770,7 +5770,6 @@ serverless-nsolid-plugin@^1.0.2:
     extract-zip "^1.6.7"
     fs-extra "^7.0.1"
     request "^2.88.0"
-    uuid-validate "^0.0.3"
 
 serverless-webpack@^5.2.0:
   version "5.2.0"
@@ -6811,11 +6810,6 @@ utils-merge@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
-
-uuid-validate@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/uuid-validate/-/uuid-validate-0.0.3.tgz#e30617f75dc742a0e4f95012a11540faf9d39ab4"
-  integrity sha512-Fykw5U4eZESbq739BeLvEBFRuJODfrlmjx5eJux7W817LjRaq4b7/i4t2zxQmhcX+fAj4nMfRdTzO4tmwLKn0w==
 
 uuid@3.0.0:
   version "3.0.0"
