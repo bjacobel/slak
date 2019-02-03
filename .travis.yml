@@ -7,6 +7,7 @@ jobs:
       script: yarn tpl test
     - script: yarn tpl lint
     - script: yarn tpl sls package
+    - script: yarn tpl sls invoke local -f main -d '{"source":{"service":"local"}}'
 stages:
   - test
 notifications:
