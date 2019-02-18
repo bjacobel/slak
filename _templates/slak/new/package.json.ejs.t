@@ -41,9 +41,6 @@ to: package.json
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.2.1"
   },
-  "resolutions": {
-    "logform": "2.1.0"
-  },
   "engine": {
     "node": "~10.12"
   }
