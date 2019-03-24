@@ -17,7 +17,8 @@ to: tsconfig.json
     "target": "es2017",
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "__mocks__/**/*"
   ],
   "exclude": [
     "node_modules",

@@ -13,10 +13,10 @@ module.exports = {
     "^.+\\.ts$": "ts-jest",
   },
   globals: {
-    'ts-jest': {
+    "ts-jest": {
       diagnostics: {
-        warnOnly: true
-      }
-    }
-  }
+        warnOnly: true,
+      },
+    },
+  },
 };
