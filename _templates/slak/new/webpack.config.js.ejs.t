@@ -18,11 +18,11 @@ module.exports = {
         test: /\.ts$/,
         include: [path.join(__dirname, "src")],
         use: "ts-loader",
-      }
+      },
     ],
   },
   optimization: {
-    noEmitOnErrors: true
+    noEmitOnErrors: true,
   },
   resolve: {
     extensions: [".js", ".ts", ".json"],
@@ -38,7 +38,9 @@ module.exports = {
       statsOptions: { source: true },
     }),
     new webpack.DefinePlugin({
-      "process.env.NODE_ENV": slsw.lib.webpack.isLocal ? JSON.stringify("development") : JSON.stringify("production")
-    })
-  ]
+      "process.env.NODE_ENV": slsw.lib.webpack.isLocal
+        ? JSON.stringify("development")
+        : JSON.stringify("production"),
+    }),
+  ],
 };
