@@ -16,6 +16,7 @@ to: hygen-create.json
     "jest.config.js": true,
     "hygen-create.json": true,
     ".gitignore": true,
+    ".npmrc": true,
     ".vscode/settings.json": true,
     ".vscode/launch.json": true,
     ".serverless/cloudformation-template-create-stack.json": true,
