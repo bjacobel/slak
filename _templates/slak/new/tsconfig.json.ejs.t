@@ -14,13 +14,8 @@ to: tsconfig.json
     "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es2017",
+    "target": "es2017"
   },
-  "include": [
-    "src/**/*",
-    "__mocks__/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-  ]
+  "include": ["src/**/*", "__mocks__/**/*"],
+  "exclude": ["node_modules"]
 }

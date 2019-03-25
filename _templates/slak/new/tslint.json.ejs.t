@@ -2,9 +2,7 @@
 to: tslint.json
 ---
 {
-  "extends": [
-    "tslint:latest", "tslint-config-prettier"
-  ],
+  "extends": ["tslint:latest", "tslint-config-prettier"],
   "rules": {
     "interface-name": false,
     "no-implicit-dependencies": [true, "dev"],
