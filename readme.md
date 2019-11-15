@@ -11,7 +11,7 @@ Features include:
 - TS-Node, for debugging
 - Webpack, to bundle your functions
 - Serverless, to manage deployment and provisioning
-- Node 10 LTS, for the fastest startup and execution possible
+- Node 12 LTS, for the fastest startup and execution possible
 - N|Solid, for profiling in production with minimal overhead
 - Builtin logging utils and project structure for getting moving fast
 

@@ -5,7 +5,7 @@ to: src/utils/__tests__/__snapshots__/log-test.ts.snap
 
 exports[`log util in dev mode formats errors like I want 1`] = `
 "[31merror[39m: 	Error: format the error please
-	    at Object.it ("
+	    at Object.<anonymous> ("
 `;
 
 exports[`log util in dev mode formats javascript objects like I want 1`] = `

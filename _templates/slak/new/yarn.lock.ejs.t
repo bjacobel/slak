@@ -5664,10 +5664,10 @@ serverless-dotenv-plugin@^2.0.1:
     dotenv "^4.0.0"
     dotenv-expand "^4.0.1"
 
-serverless-nsolid-plugin@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/serverless-nsolid-plugin/-/serverless-nsolid-plugin-1.0.5.tgz#b8cf9aca4026d40198ab9eca7e7b558125a887e3"
-  integrity sha512-QTWMPJprW4q3J2iVSvXJfKdEn5kfKKtssrG6bcqR72C7pgZLuc5ctak79e6/pa9Ed3GMlh0SlWw0D/GHWI4pHg==
+serverless-nsolid-plugin@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/serverless-nsolid-plugin/-/serverless-nsolid-plugin-1.1.0.tgz#d547ab3f33120097539885d4ef9318c314389781"
+  integrity sha512-OydByFjbMHdYhSKgPWtg5q+iPetSbmjoQXYl7bisbHne4o/omMZ8iGeNkO0QxpxeT4G9jhziXvvRu/Tlu3SehQ==
   dependencies:
     aws-sdk "^2.392.0"
     dotenv "^6.2.0"
