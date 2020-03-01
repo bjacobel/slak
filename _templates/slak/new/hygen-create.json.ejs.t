@@ -15,6 +15,8 @@ to: hygen-create.json
     "package.json": true,
     "jest.config.js": true,
     "hygen-create.json": true,
+    ".eslintignore": true,
+    ".eslintrc.js": true,
     ".gitignore": true,
     ".npmrc": true,
     ".vscode/settings.json": true,
