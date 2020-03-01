@@ -36,7 +36,8 @@ const cleanup = async (outputLocation, code) => {
     console.log(await new Promise((resolve, reject) => {
       const cmd = spawn("yarn", args, {
         cwd: outputLocation,
-        stdio: "inherit"
+        stdio: "inherit",
+        shell: true
       });
 
       cmd.on('close', (code) => {
