@@ -22,10 +22,10 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile --ignore-scripts
       - name: Lint
-        run: yarn lint
+        run: yarn tpl lint
       - name: Test
-        run: yarn test
+        run: yarn tpl test
       - name: Build
-        run: yarn sls webpack
+        run: yarn tpl sls webpack
         env:
           NODE_ENV: production
