@@ -12,7 +12,6 @@ to: package.json
     "analyze": "ANALYZE=true sls package",
     "deploy": "sls deploy",
     "test": "jest",
-    "sls": "sls",
     "upstream": "rm -rf /tmp/_templates && mkdir /tmp/_templates && HYGEN_CREATE_TMPLS=/tmp/_templates npx hygen-create g && rsync -auP --remove-source-files /tmp/_templates/"
   },
   "dependencies": {
