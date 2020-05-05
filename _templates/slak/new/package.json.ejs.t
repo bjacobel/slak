@@ -30,7 +30,6 @@ to: package.json
     "@typescript-eslint/parser": "^2.31.0",
     "eslint": "^6.8.0",
     "jest": "^25.5.4",
-    "jest-cli": "^25.5.4",
     "prettier": "^2.0.5",
     "serverless": "^1.69.0",
     "serverless-dotenv-plugin": "^2.4.2",
