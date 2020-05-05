@@ -1,4 +1,6 @@
-
+---
+to: .github/workflows/integration.yml
+---
 name: 'Integration'
 on:
   - push
@@ -22,13 +24,13 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile --ignore-scripts
       - name: Lint
-        run: yarn tpl lint
+        run: yarn lint
       - name: Test
-        run: yarn tpl test
+        run: yarn test
       - name: Build
-        run: yarn tpl sls webpack
+        run: yarn sls webpack
         env:
           NODE_ENV: production
       - name: Invoke
         run: |
-          yarn tpl sls invoke local -f main -d '{"Records": [{ "eventSource": "local" }]}'
+          yarn sls invoke local -f main -d '{"Records": [{ "eventSource": "local" }]}'
