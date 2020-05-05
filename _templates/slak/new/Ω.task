@@ -1,3 +1,3 @@
 ---
-sh: "cd <%= cwd %> && yarn install --frozen-lockfile"
+sh: "cd <%= cwd %> && NODE_ENV=development yarn install --frozen-lockfile"
 ---
