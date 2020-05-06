@@ -1,16 +1,15 @@
-
-name: 'Integration'
+name: "Integration"
 on:
   - push
 jobs:
   lint-test:
-    name: 'Lint/Test'
+    name: "Lint/Test"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: '12.13'
-      - name: 'Checkout'
+          node-version: "12.13"
+      - name: "Checkout"
         uses: actions/checkout@master
       - name: Cache node_modules
         id: cache
@@ -29,6 +28,3 @@ jobs:
         run: yarn tpl sls webpack
         env:
           NODE_ENV: production
-      - name: Invoke
-        run: |
-          yarn tpl sls invoke local -f main -d '{"Records": [{ "eventSource": "local" }]}'
