@@ -52,5 +52,13 @@ jobs:
       - name: Install
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile --ignore-scripts
+      - name: Set region
+        run: echo "::set-env name=region::$(yarn sls print --format text --path provider.region)"
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.region }}
       - name: Deploy (dev)
         run: yarn sls deploy

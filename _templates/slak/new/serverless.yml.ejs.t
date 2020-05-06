@@ -4,6 +4,7 @@ to: serverless.yml
 service: <%= name.toLowerCase() %>
 provider:
   name: aws
+  region: ${opt:region, 'us-east-1'}
   stage: ${opt:stage, "dev"}
   runtime: nsolid
   environment:
