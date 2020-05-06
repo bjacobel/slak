@@ -17,7 +17,7 @@ to: hygen-create.json
     "hygen-create.json": true,
     ".eslintignore": true,
     ".eslintrc.js": true,
-    ".github/workflows/integration.yml": true,
+    ".github/workflows/cicd.yml": true,
     ".gitignore": true,
     ".npmrc": true,
     ".vscode/settings.json": true,
