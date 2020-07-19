@@ -16,7 +16,13 @@ export const debugFormat = format.combine(
       info.message = info.stack;
     }
 
-    return `${info.level}: \t${info.message.split("\n").join("\n\t")}`;
+    return info.level && info.message
+      ? `${info.level}: \t${
+          typeof info.message === "string"
+            ? info.message.split("\n").join("\n\t")
+            : JSON.stringify(info.message, null, 2)
+        }`
+      : String(info);
   }),
 );
 
