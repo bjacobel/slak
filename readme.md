@@ -12,7 +12,6 @@ Features include:
 - Webpack, to bundle your functions
 - Serverless, to manage deployment and provisioning
 - Node 12 LTS, for the fastest startup and execution possible
-- N|Solid, for profiling in production with minimal overhead
 - Builtin logging utils and project structure for getting moving fast
 
 ## Start a Slak project
