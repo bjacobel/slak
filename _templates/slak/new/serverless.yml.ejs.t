@@ -9,6 +9,7 @@ provider:
   runtime: nodejs12.x
   environment:
     LOG_LEVEL: info
+  variableSyntax: "\\${((?!AWS)[ ~:a-zA-Z0-9._@'\",\\-\\/\\(\\)]+?)}"
 package:
   individually: true
   include:
@@ -24,6 +25,8 @@ functions:
     memorySize: 128
     handler: src/main.default
 custom:
+  dotenv:
+    logging: false
   webpack:
     packager: "yarn"
     includeModules:
