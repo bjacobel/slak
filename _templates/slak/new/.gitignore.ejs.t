@@ -6,4 +6,3 @@ reports
 .webpack
 .serverless/*.zip
 .env
-.nsolid

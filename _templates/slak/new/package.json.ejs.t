@@ -33,7 +33,6 @@ to: package.json
     "prettier": "^2.0.5",
     "serverless": "^1.69.0",
     "serverless-dotenv-plugin": "^2.4.2",
-    "serverless-nsolid-plugin": "^1.1.0",
     "serverless-webpack": "^5.3.2",
     "ts-jest": "^25.4.0",
     "ts-loader": "^7.0.2",

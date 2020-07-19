@@ -6,7 +6,7 @@ provider:
   name: aws
   region: ${opt:region, 'us-east-1'}
   stage: ${opt:stage, "dev"}
-  runtime: nsolid
+  runtime: nodejs12.x
   environment:
     LOG_LEVEL: info
 package:
@@ -19,7 +19,6 @@ package:
 plugins:
   - serverless-webpack
   - serverless-dotenv-plugin
-  - serverless-nsolid-plugin
 functions:
   main:
     memorySize: 128
