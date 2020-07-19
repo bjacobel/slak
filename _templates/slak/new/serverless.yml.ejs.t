@@ -28,5 +28,4 @@ custom:
     packager: "yarn"
     includeModules:
       forceExclude:
-        - electron
         - aws-sdk

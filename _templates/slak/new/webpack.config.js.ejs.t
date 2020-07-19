@@ -31,7 +31,6 @@ module.exports = {
   },
   externals: {
     "aws-sdk": "aws-sdk",
-    electron: "electron",
   },
   plugins: [
     new BundleAnalyzerPlugin({
