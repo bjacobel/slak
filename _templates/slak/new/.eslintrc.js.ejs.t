@@ -10,7 +10,7 @@ module.exports = {
   extends: ["eslint:recommended"],
   overrides: [
     {
-      files: ["*.md"],
+      files: ["*.ts"],
       extends: ["plugin:@typescript-eslint/recommended"],
     },
   ],

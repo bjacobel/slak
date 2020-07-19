@@ -15,7 +15,7 @@ package:
     - src/**
   exclude:
     - src/__tests__/**
-    - node_modules/aws-sdk/**  # The Lambda execution environment provides the aws-sdk builtin, so exclude it from packaging.
+    - node_modules/aws-sdk/** # The Lambda execution environment provides the aws-sdk builtin, so exclude it from packaging.
 plugins:
   - serverless-webpack
   - serverless-dotenv-plugin

@@ -6,9 +6,9 @@ to: package.json
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "style": "prettier -c --ignore-path .eslintignore \"**/*.{js,ts,json,md}\"",
+    "style": "prettier -c --ignore-path .eslintignore .",
     "validate": "tsc --noEmit",
-    "lint": "yarn --silent style && yarn --silent validate && eslint . --ext .js,.ts",
+    "lint": "yarn --silent style && yarn --silent validate && eslint .",
     "analyze": "ANALYZE=true sls package",
     "deploy": "sls deploy",
     "test": "jest",
