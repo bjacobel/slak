@@ -6,20 +6,20 @@ to: package.json
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "style": "prettier -c --ignore-path .eslintignore \"**/*.{js,ts,json,md}\"",
+    "style": "prettier -c --ignore-path .eslintignore .",
     "validate": "tsc --noEmit",
-    "lint": "yarn --silent style && yarn --silent validate && eslint . --ext .js,.ts",
+    "lint": "yarn --silent style && yarn --silent validate && eslint .",
     "analyze": "ANALYZE=true sls package",
     "deploy": "sls deploy",
     "test": "jest",
     "upstream": "rm -rf /tmp/_templates && mkdir /tmp/_templates && HYGEN_CREATE_TMPLS=/tmp/_templates npx hygen-create g && rsync -auP --remove-source-files /tmp/_templates/"
   },
   "dependencies": {
-    "aws-lambda": "^1.0.6",
-    "aws-sdk": "^2.669.0",
-    "logform": "^2.1.0",
-    "triple-beam": "^1.2.0",
-    "winston": "^3.1.0"
+    "aws-lambda": "1.0.6",
+    "aws-sdk": "2.715.0",
+    "logform": "2.2.0",
+    "triple-beam": "1.3.0",
+    "winston": "3.3.3"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.51",
@@ -28,6 +28,7 @@ to: package.json
     "@types/triple-beam": "^1.3.0",
     "@typescript-eslint/eslint-plugin": "^2.31.0",
     "@typescript-eslint/parser": "^2.31.0",
+    "duplicate-package-checker-webpack-plugin": "3.0.0",
     "eslint": "^6.8.0",
     "jest": "^25.5.4",
     "prettier": "^2.0.5",
