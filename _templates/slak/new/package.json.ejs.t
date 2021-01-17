@@ -8,7 +8,7 @@ to: package.json
   "scripts": {
     "style": "prettier -c --ignore-path .eslintignore .",
     "validate": "tsc --noEmit",
-    "lint": "yarn --silent style && yarn --silent validate && eslint .",
+    "lint": "yarn --silent style && yarn --silent validate && eslint . --ext .js,.ts",
     "analyze": "ANALYZE=true sls package",
     "deploy": "sls deploy",
     "test": "jest",
