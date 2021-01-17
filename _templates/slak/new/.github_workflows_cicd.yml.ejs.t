@@ -53,7 +53,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile --ignore-scripts
       - name: Set region
-        run: echo "::set-env name=region::$(yarn --silent sls print --format text --path provider.region)"
+        run: echo "region=$(yarn --silent sls print --format text --path provider.region) >> $GITHUB_ENV"
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
