@@ -22,19 +22,19 @@ describe("main function handler", () => {
   });
   describe("error handling", () => {
     it("logs the event with INFO level", () => {
-      return main(("nope" as unknown) as SQSEvent).catch(() =>
+      return main("nope" as unknown as SQSEvent).catch(() =>
         expect(log.info).toHaveBeenCalledWith('"nope"'),
       );
     });
 
     it("logs the error with ERROR level", async () => {
-      return main(("nope" as unknown) as SQSEvent).catch(() =>
+      return main("nope" as unknown as SQSEvent).catch(() =>
         expect(log.error).toHaveBeenCalledWith(expect.any(TypeError)),
       );
     });
 
     it("returns a promise rejection", () => {
-      return main(("nope" as unknown) as SQSEvent).catch((err: Error) =>
+      return main("nope" as unknown as SQSEvent).catch((err: Error) =>
         expect(err).toBeInstanceOf(TypeError),
       );
     });

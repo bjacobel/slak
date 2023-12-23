@@ -3,7 +3,7 @@ to: tsconfig.json
 ---
 {
   "compilerOptions": {
-    "lib": ["es2017"],
+    "lib": ["es2022"],
     "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitAny": true,
@@ -14,8 +14,8 @@ to: tsconfig.json
     "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true,
-    "target": "es2017"
+    "target": "es2022",
+    "skipLibCheck": true
   },
-  "include": ["src/**/*", "__mocks__/**/*"],
-  "exclude": ["node_modules"]
+  "include": ["src/**/*", "__mocks__/**/*"]
 }

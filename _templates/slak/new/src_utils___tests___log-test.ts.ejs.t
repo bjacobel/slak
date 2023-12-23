@@ -21,7 +21,7 @@ describe("log util", () => {
       const info = debugFormat.transform({
         [Symbol.for("level")]: "error",
         level: "error",
-        message: (new Error("format the error please") as unknown) as string,
+        message: new Error("format the error please") as unknown as string,
       }) as TransformableInfo;
       expect(info[MESSAGE].split(__dirname)[0]).toMatchSnapshot();
     });

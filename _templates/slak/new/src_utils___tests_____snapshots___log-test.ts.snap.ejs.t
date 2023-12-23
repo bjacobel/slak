@@ -10,8 +10,8 @@ exports[`log util in dev mode formats errors like I want 1`] = `
 
 exports[`log util in dev mode formats javascript objects like I want 1`] = `
 "[32minfo[39m: 	{
-	  \\"foo\\": {
-	    \\"bar\\": [
+	  "foo": {
+	    "bar": [
 	      1,
 	      2,
 	      3

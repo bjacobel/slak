@@ -16,7 +16,12 @@ to: .vscode/settings.json
     "titleBar.inactiveForeground": "#e7e7e799",
     "statusBar.background": "#663399",
     "statusBarItem.hoverBackground": "#7f40bf",
-    "statusBar.foreground": "#e7e7e7"
+    "statusBar.foreground": "#e7e7e7",
+    "activityBar.activeBackground": "#7f40bf",
+    "commandCenter.border": "#e7e7e799",
+    "sash.hoverBorder": "#7f40bf",
+    "statusBarItem.remoteBackground": "#663399",
+    "statusBarItem.remoteForeground": "#e7e7e7"
   },
   "peacock.color": "#639"
 }

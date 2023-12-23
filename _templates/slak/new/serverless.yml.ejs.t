@@ -4,12 +4,10 @@ to: serverless.yml
 service: <%= name.toLowerCase() %>
 provider:
   name: aws
-  region: ${opt:region, 'us-east-1'}
   stage: ${opt:stage, "dev"}
-  runtime: nodejs12.x
+  runtime: nodejs20.x
   environment:
     LOG_LEVEL: info
-  variableSyntax: "\\${((?!AWS)[ ~:a-zA-Z0-9._@'\",\\-\\/\\(\\)]+?)}"
 package:
   individually: true
   include:
@@ -25,10 +23,9 @@ functions:
     memorySize: 128
     handler: src/main.default
 custom:
-  dotenv:
-    logging: false
   webpack:
     packager: "yarn"
     includeModules:
       forceExclude:
+        - electron
         - aws-sdk
