@@ -8,11 +8,12 @@ to: .vscode/launch.json
       "name": "Debug TS",
       "type": "node",
       "request": "launch",
-      "args": ["${workspaceRoot}/src/main.ts"],
+      "args": ["-e", "require('${workspaceRoot}/src/main.ts').default()"],
       "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],
       "cwd": "${workspaceRoot}",
-      "protocol": "inspector",
-      "internalConsoleOptions": "openOnSessionStart"
+      "internalConsoleOptions": "openOnSessionStart",
+      "envFile": "${workspaceFolder}/.env",
+      "outputCapture": "std"
     }
   ]
 }

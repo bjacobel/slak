@@ -2,36 +2,42 @@
 to: src/utils/log.ts
 ---
 import { format } from "logform";
-import { createLogger, transports } from "winston";
+import winston from "winston";
 
-import { IS_PROD } from "../constants";
+import { IS_PROD } from "../constants.ts";
 
-const defaultFormat = [format.errors({ stack: true })];
+let logger: winston.Logger;
 
-export const debugFormat = format.combine(
-  format.colorize(),
-  ...defaultFormat,
-  format.printf((info) => {
-    if (info.stack) {
-      info.message = info.stack;
-    }
+if (IS_PROD) {
+  const WinstonCloudWatch = require("winston-cloudwatch");
+  logger = winston.createLogger({
+    level: "debug",
+    format: format.json(),
+    transports: [
+      new WinstonCloudWatch({
+        level: "error",
+        logGroupName: "/aws/lambda/petsky-dev-main",
+        logStreamName: "winston",
+        awsRegion: "us-east-1",
+      }),
+    ],
+  });
+} else {
+  const debugFormat = require("winston-format-debug").default;
+  logger = winston.createLogger({
+    levels: winston.config.syslog.levels,
+    level: "debug",
+    transports: [
+      new winston.transports.Console({
+        format: winston.format.combine(
+          debugFormat({
+            levels: winston.config.syslog.levels,
+            colors: winston.config.syslog.colors,
+          }),
+        ),
+      }),
+    ],
+  });
+}
 
-    return `${info.level}: \t${info.message.split("\n").join("\n\t")}`;
-  }),
-);
-
-export const cloudwatchFormat = format.combine(
-  ...defaultFormat,
-  format.timestamp(),
-  format.json(),
-);
-
-export default createLogger({
-  level: "info",
-  format: IS_PROD ? cloudwatchFormat : debugFormat,
-  transports: [
-    new transports.Console({
-      level: process.env.LOG_LEVEL,
-    }),
-  ],
-});
+export default logger;

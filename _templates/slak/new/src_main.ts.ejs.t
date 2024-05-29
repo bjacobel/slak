@@ -1,16 +1,20 @@
 ---
 to: src/main.ts
 ---
-import { SQSEvent } from "aws-lambda";
+import type { EventBridgeEvent, Handler } from "aws-lambda";
 
 import log from "./utils/log";
 
-export default async (event: SQSEvent): Promise<string> => {
+const handler: Handler<EventBridgeEvent<"Scheduled Event", string>> = async (
+  event,
+) => {
   try {
-    return Promise.resolve(event.Records[0].eventSource);
+    return Promise.resolve();
   } catch (e) {
     log.info(JSON.stringify(event, null, 2));
     log.error(e);
     return Promise.reject(e);
   }
 };
+
+export default handler;

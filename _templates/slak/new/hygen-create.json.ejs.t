@@ -23,10 +23,11 @@ to: hygen-create.json
     ".vscode/launch.json": true,
     ".serverless/cloudformation-template-create-stack.json": true,
     "__mocks__/winston.ts": true,
-    "__mocks__/winston-transport/legacy.ts": true,
     "src/main.ts": true,
+    "src/debug-handler.ts": true,
     "src/__tests__/main-test.ts": true,
     "src/utils/log.ts": true,
+    "src/utils/secrets.ts": true,
     "src/utils/__tests__/log-test.ts": true,
     "src/utils/__tests__/__snapshots__/log-test.ts.snap": true
   },

@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: "12.13"
+          node-version: "20"
       - name: "Checkout"
         uses: actions/checkout@master
       - name: Cache node_modules
@@ -40,7 +40,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: "12.13"
+          node-version: "20"
       - name: "Checkout"
         uses: actions/checkout@master
       - name: Cache node_modules

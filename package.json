@@ -21,6 +21,7 @@
     "fs-extra": "^7.0.0"
   },
   "engines": {
-    "node": "~20.10"
-  }
+    "node": "^20"
+  },
+  "packageManager": "yarn@1.22.22"
 }
