@@ -1,19 +1,22 @@
 name: "Integration"
 on:
   - push
+concurrency:
+  group: ${{ github.ref }}-cicd
+  cancel-in-progress: true
 jobs:
   lint-test:
     name: "Lint/Test"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v4
         with:
-          node-version: "20.10"
+          node-version: "20"
       - name: "Checkout"
         uses: actions/checkout@master
       - name: Cache node_modules
         id: cache
-        uses: actions/cache@v1
+        uses: actions/cache@v4
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ hashFiles('yarn.lock') }}
@@ -21,10 +24,10 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile --ignore-scripts
       - name: Lint
-        run: yarn tpl lint
+        run: yarn lint
       - name: Test
-        run: yarn tpl test
+        run: yarn test
       - name: Build
-        run: yarn tpl sls webpack
+        run: yarn sls package
         env:
           NODE_ENV: production
