@@ -9,7 +9,7 @@ const handler: Handler<EventBridgeEvent<"Scheduled Event", string>> = async (
   event,
 ) => {
   try {
-    return Promise.resolve();
+    return Promise.resolve(event.id);
   } catch (e) {
     log.info(JSON.stringify(event, null, 2));
     log.error(e);

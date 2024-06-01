@@ -1,14 +1,8 @@
 ---
 to: __mocks__/winston.ts
 ---
-import { EventEmitter } from "events";
+const winston = jest.requireActual("winston");
 
-export const { createLogger } = jest.requireActual("winston");
+winston.transports.Console.prototype.log = jest.fn();
 
-const Console = jest.fn();
-Console.prototype.__proto__ = EventEmitter.prototype;
-Console.prototype.constructor = jest.fn();
-Console.prototype.log = jest.fn();
-export const transports = {
-  Console,
-};
+export default winston;

@@ -27,9 +27,7 @@ to: hygen-create.json
     "src/debug-handler.ts": true,
     "src/__tests__/main-test.ts": true,
     "src/utils/log.ts": true,
-    "src/utils/secrets.ts": true,
-    "src/utils/__tests__/log-test.ts": true,
-    "src/utils/__tests__/__snapshots__/log-test.ts.snap": true
+    "src/utils/secrets.ts": true
   },
   "templatize_using_name": "<%= name.toLowerCase() %>",
   "gen_parent_dir": false

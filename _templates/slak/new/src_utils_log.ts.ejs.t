@@ -9,6 +9,7 @@ import { IS_PROD } from "../constants.ts";
 let logger: winston.Logger;
 
 if (IS_PROD) {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const WinstonCloudWatch = require("winston-cloudwatch");
   logger = winston.createLogger({
     level: "debug",
@@ -23,6 +24,7 @@ if (IS_PROD) {
     ],
   });
 } else {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
   const debugFormat = require("winston-format-debug").default;
   logger = winston.createLogger({
     levels: winston.config.syslog.levels,
