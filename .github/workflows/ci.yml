@@ -28,6 +28,6 @@ jobs:
       - name: Test
         run: yarn tpl test
       - name: Build
-        run: yarn tpl sls webpack
+        run: yarn tpl sls package
         env:
           NODE_ENV: production
