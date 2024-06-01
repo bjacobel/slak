@@ -6,12 +6,12 @@ Cousin of [Rak](https://github.com/bjacobel/rak), Slak bootstraps a Serverless p
 
 Features include:
 - TypeScript, for safe programming
-- TSLint and Prettier, to promote good code style
+- ESLint and Prettier, to promote good code style
 - Jest, for unit testing
 - TS-Node, for debugging
-- Webpack, to bundle your functions
+- ESBuild, to bundle your functions
 - Serverless, to manage deployment and provisioning
-- Node 12 LTS, for the fastest startup and execution possible
+- Node 20 LTS, for the fastest startup and execution possible
 - Builtin logging utils and project structure for getting moving fast
 
 ## Start a Slak project
@@ -30,7 +30,7 @@ Most of the files in this repository are templates. To make changes to the app t
 
 2. Make some changes in the templated app, e.g., adding a new util file
 
-        echo "module.exports = {};" > src/utils/newUtil.ts
+        echo "export default {};" > src/utils/newUtil.ts
 
 3. Make `hygen-create` aware of the new file
 
