@@ -10,7 +10,8 @@
     "url": "git+https://github.com/bjacobel/slak.git"
   },
   "scripts": {
-    "tpl": "scripts/tpl.js"
+    "tpl": "scripts/tpl.js",
+    "test": "yarn tpl lint && yarn tpl test"
   },
   "author": "Brian Jacobel <brian@bjacobel.com>",
   "license": "MIT",
